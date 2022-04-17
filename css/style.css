@@ -138,6 +138,23 @@ https://css-live.ru/articles/zagadochnye-otstupy-mezhdu-inlajn-blokami.html
 ? position: absolute;
 ? position: fixed;
 ? position: sticky;
+
+
+
+/* !Трансформации
+? transform: translate(x,y);
+? transform: scale(n,m);
+? transform: rotate(a + deg);
+? transform: skew(a + deg, b+deg);
+? transform-origin;
+? 
+? 
+? 
+? 
+
+
+
+
 */
 
 
@@ -163,7 +180,7 @@ body {
 }
 
 .wrapper {
-  min-height: 100%;
+  
 }
 
 .header {
@@ -171,9 +188,141 @@ body {
 }
 
 .main {
- 
+  min-height: 100vh;
 }
 
 
 /* ! --------------ИМЯ-БЛОКА------------------ */
+.main {
+  margin: 0 auto;
+  
+  padding: 50px 0px 100px 0px;
+  background: #3f3c3c;
+  min-height: 400vh;
+}
 
+.title {
+  max-width: 700px;
+  margin: 20px auto 20px;
+  color: #ffffff;
+  font-size: 60px;
+  line-height: 90px;
+  text-align: center;
+}
+
+.parent-block {
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto 100px;
+  background: #ffffff;
+  /* background: url(../img/Liza.jpeg) 0 0/cover no-repeat; */
+  /* perspective: 400px; */
+}
+
+
+.child-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+
+  background: #91aaca;
+  color: #ffffff;
+  transition: 0.6s ease-in-out 0.1s;
+}
+
+
+
+.translate:hover {
+  transform: translate(30px, 30px);
+}
+
+.scale:hover {
+  transform: scale(2, 2);
+}
+
+.rotate:hover {
+  transform: rotate(360deg);
+}
+
+.skew:hover {
+  transform: skew(0, 25deg);
+}
+
+.matrix:hover {
+  transform: matrix(1.5,0.2,0.2,1.5,50,50);
+}
+.multiple:hover {
+  transform: matrix(1.5,0.2,0.2,1.5,50,50);
+}
+
+.origin:hover {
+  transform: rotate(45deg);
+}
+
+.list-item:nth-child(7) .child-block {
+  transform-origin: 0 0;
+}
+
+
+.list-item:nth-child(8) .parent-block {
+  perspective: 150px;
+  perspective-origin: 100px 0;
+}
+
+.list-item:nth-child(8) .child-block:hover {
+  transform: rotateX(-180deg);
+}
+
+.translate3d:hover {
+  transform: translate3d(30px, 30px, 30px);
+}
+
+.rotate3d:hover {
+  transform: rotate3d(10, 10, 10, 360deg);
+}
+
+.list-item:nth-child(11) .parent-block {
+  perspective-origin: 0 0;
+  perspective: 150px;
+  transform-style: preserve-3d;
+}
+
+.list-item:nth-child(11) .child-block:hover {
+  transform: scaleY(1.5);
+}
+
+.list-item:nth-child(12) .parent-block {
+  /* perspective-origin: 0 0; */
+  perspective: 150px;
+}
+
+.list-item:nth-child(12) .child-block:hover {
+  transform-origin: 0 0; 
+  transform: rotateY(145deg);
+  backface-visibility: visible;
+}
+
+
+
+.test {
+  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  background: #4973c2;
+  transform:
+    scale(0.75) rotateY(-30deg) rotateX(45deg) translateZ(4.5rem);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  box-shadow: 1rem 1rem 2rem rgba(0, 0, 0, 0.25);
+  transition: 0.6s ease transform;
+}
+
+.test:hover {
+  transform: scale(1.5);
+}
